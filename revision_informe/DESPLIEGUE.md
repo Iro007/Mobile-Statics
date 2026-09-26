@@ -6,7 +6,8 @@ Despliegue verificado el 26 de septiembre de 2026.
 - Repositorio actual: https://github.com/Iro007/Mobile-Statics
 - Proveedor: GitHub Pages, repositorio público, sin servidor de pago.
 - Fuente de publicación: rama `gh-pages`, carpeta raíz, HTTPS forzado.
-- Commit desplegado: `bf6a6073a432eef257895bfb7c773b335466da2a`.
+- Commit desplegado: `c160341d0dced60f0999ced2165b2298f04fa7b0`.
+- Favicon SVG de teléfono publicado y enlazado desde `site/index.html`.
 - GitHub Actions: ejecución `36268783514`, concluida con éxito.
 - El remoto histórico de Byirosaleshd redirige al propietario actual Iro007.
 
