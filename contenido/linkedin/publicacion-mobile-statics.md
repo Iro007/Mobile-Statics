@@ -1,23 +1,21 @@
-# LinkedIn · Mobile-Statics
+# LinkedIn Post - Mobile-Statics
 
-¿Qué tanto explica el procesador el precio de un teléfono? 📱📊
+How much does processor speed explain the price of a phone? 📱📊
 
-En marzo de 2025, mi compañero Miguel Sanz y yo desarrollamos Mobile-Statics como parte de Estadística II en la Universidad Central de Venezuela.
+In March 2025, my classmate Miguel Sanz and I developed Mobile-Statics for our Statistics II course at the Central University of Venezuela.
 
-Trabajamos con un catálogo de móviles disponible en Kaggle, atribuido a Smartprix. El proceso incluyó limpiar campos de texto, tratar datos faltantes, explorar las especificaciones y estudiar la relación entre los GHz del procesador y el precio con Python y SPSS.
+We worked with a mobile-phone catalog available on Kaggle and attributed to Smartprix. The project involved cleaning text fields, handling missing data, exploring specifications, and using Python and SPSS to study the relationship between processor speed (GHz) and price.
 
-De 1.020 registros originales quedaron 865 tras la limpieza inicial y 787 pares completos para la regresión.
+We started with 1,020 records. After the initial cleaning, 865 remained, with 787 complete pairs for the regression. We found a moderate positive correlation (r ≈ 0.594); the model explained about 35.2% of the observed variation in price.
 
-Encontramos una correlación positiva moderada (r ≈ 0,594). El modelo lineal explicó alrededor del 35,2 % de la variación observada en el precio.
+We also examined the model's limitations: the residuals showed problems with normality and constant variance, and some extreme values had a notable influence on the fit. My main takeaway was the importance of checking assumptions and explaining the limits of each conclusion.
 
-Lo más valioso fue revisar qué tan bien se sostenía ese resultado. Los residuos presentaron problemas de normalidad y varianza, y algunos valores extremos influyeron bastante en el ajuste. Me quedo con la importancia de revisar los supuestos y comunicar los límites de cada conclusión.
+We are sharing the project in an interactive website where you can filter the catalog, explore the charts, download the data, and read the revised report, which adds the covariance calculation and explains the analysis process.
 
-Ahora comparto el proyecto en una web interactiva: puedes filtrar el catálogo, explorar los gráficos, descargar los datos y leer el informe revisado, que incorpora la covarianza y explica todo el proceso.
+The data are historical, and the prices use an illustrative currency conversion explained in the report.
 
-Son datos históricos y los precios usan una conversión monetaria ilustrativa, detallada en el informe.
+🔎 Explore the project: https://iro007.github.io/Mobile-Statics/
 
-🔎 Explora el proyecto: https://iro007.github.io/Mobile-Statics/
+What variable would you add to the analysis: memory, camera, battery, or brand?
 
-¿Qué variable agregarías al análisis: memoria, cámara, batería o marca?
-
-#Estadística #AnálisisDeDatos #RegresiónLineal #Python #UCV
+#Statistics #DataAnalysis #LinearRegression #Python #UCV
