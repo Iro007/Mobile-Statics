@@ -20,6 +20,8 @@
 - Páginas renderizadas y revisadas visualmente; figuras completas, tablas legibles y fórmulas sin símbolos sustituidos.
 - Formato de trabajo estudiantil APA 7: Times New Roman 12, interlineado doble, márgenes de 2,54 cm, sangría de primera línea, resumen sin sangría, numeración superior derecha, referencias con sangría francesa y títulos en cursiva.
 - El detalle automático y el recuento definitivo están en `revision_pdf.json`.
+- Presentación exportada de Canva: 33 diapositivas, archivo PPTX íntegro y cero números etiquetados como CI en el texto de las diapositivas o notas. La portada se revisó visualmente en Canva después de eliminar los dos números y preservar los nombres.
+- La revisión de identificadores en el PPTX cubre los campos de texto de las diapositivas y notas; no ejecuta OCR sobre imágenes incorporadas.
 
 ## Compilación LaTeX: bloqueada por el entorno
 

@@ -11,7 +11,7 @@ La web permite filtrar 865 registros y explorar las gráficas. El ajuste princip
 ## Organización
 
 - `site/`: web estática publicada en GitHub Pages desde la raíz de `gh-pages`.
-- `entregables/estadistica_ii/`: informe revisado en PDF y fuente LaTeX.
+- `entregables/estadistica_ii/`: presentación exportada de Canva (`Presentacion_Mobile_Statics.pptx`), informe revisado en PDF y fuente LaTeX.
 - `contenido/linkedin/`: texto listo para adaptar y publicar en LinkedIn.
 - `revision_informe/`: análisis reproducible, diagnósticos, material de despliegue y verificaciones.
 - Los CSV, el cuaderno y los archivos originales del proyecto permanecen en su ubicación histórica en la raíz para conservar la compatibilidad con los notebooks y los datos previos.
