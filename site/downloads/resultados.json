@@ -1,0 +1,230 @@
+{
+  "n": 787,
+  "raw_n": 1020,
+  "clean_n": 865,
+  "raw_dropna_n": 865,
+  "same_names_after_dropna": true,
+  "missing": {
+    "Nombre": 0,
+    "Calificación": 0,
+    "Puntaje_Especs": 0,
+    "Conectividad": 0,
+    "RAM": 0,
+    "Memoria": 7,
+    "Nombre_Procesador": 0,
+    "Nucleos_Procesador": 16,
+    "GHz_Procesador": 78,
+    "Pulgadas": 3,
+    "Resolucion_pantalla": 3,
+    "Tasa_de_refresco": 173,
+    "Camara_frontal": 173,
+    "Almacenamiento_extra_sistema_operativo": 0,
+    "Capacidad_Batería_mAh": 3,
+    "Velocidad_Carga_W": 89,
+    "Relacion_Bateria_Precio": 3,
+    "triple_trasera": 0,
+    "camara_frontal": 19,
+    "relacion_calidad_precio": 0,
+    "sistema_operativo": 0,
+    "soporte_tarjeta_memoria": 0,
+    "tiene_radio_fm": 0,
+    "Precio($)": 0
+  },
+  "raw_missing": {
+    "mobile_name": 0,
+    "price": 0,
+    "rating": 0,
+    "specs_score": 155,
+    "connectivity": 0,
+    "processor": 0,
+    "storage": 0,
+    "battery": 0,
+    "display": 0,
+    "camera": 0,
+    "extra_storage": 3,
+    "os": 11
+  },
+  "duplicates_raw": 1,
+  "duplicates_clean": 1,
+  "duplicate_names": [
+    "Lava Storm 5G",
+    "Lava Storm 5G"
+  ],
+  "conversion_matches": 865,
+  "conversion_join_rows": 865,
+  "mx": 2.5184752223634055,
+  "my": 333.9773214739517,
+  "sx": 0.45856531755761093,
+  "sy": 342.013461794315,
+  "sxx": 165.28177026683608,
+  "syy": 91940941.52614567,
+  "sxy": 73167.77522576874,
+  "covariance": 93.08877255186863,
+  "r": 0.5935439718526685,
+  "r2": 0.35229444652264086,
+  "adj_r2": 0.3514693439067461,
+  "params": {
+    "const": -780.9141071697542,
+    "x": 442.6850892729704
+  },
+  "se": {
+    "const": 54.841230904971205,
+    "x": 21.423773962576664
+  },
+  "t": {
+    "const": -14.23954375719467,
+    "x": 20.663263626952872
+  },
+  "p": {
+    "const": 4.2750754191473437e-41,
+    "x": 4.4220274948923353e-76
+  },
+  "ci": [
+    [
+      -888.5669263766533,
+      -673.261287962855
+    ],
+    [
+      400.63042297419344,
+      484.73975557174737
+    ]
+  ],
+  "hc3_se": [
+    65.45280071997804,
+    28.826798648026
+  ],
+  "hc3_ci": [
+    [
+      -909.3973378744515,
+      -652.4308764650568
+    ],
+    [
+      386.0983553145916,
+      499.27182323134923
+    ]
+  ],
+  "hc3_p": [
+    2.8311624433195036e-30,
+    9.840968238518862e-47
+  ],
+  "SSR_explained": 32390283.107723974,
+  "SSE": 59550658.41842169,
+  "MSE": 75860.71136104675,
+  "s": 275.428232686932,
+  "f": 426.97046371695194,
+  "f_p": 4.422027494895015e-76,
+  "tcrit": 1.9629905717003286,
+  "predictions": [
+    {
+      "mean": 325.7986160126719,
+      "mean_se": 9.825931418330963,
+      "mean_ci_lower": 306.5104052803142,
+      "mean_ci_upper": 345.0868267450296,
+      "obs_ci_lower": -215.20835301277532,
+      "obs_ci_upper": 866.8055850381191
+    },
+    {
+      "mean": 1211.1687945586127,
+      "mean_se": 43.572266435041485,
+      "mean_ci_lower": 1125.6368463590115,
+      "mean_ci_upper": 1296.700742758214,
+      "obs_ci_lower": 663.7820760280435,
+      "obs_ci_upper": 1758.5555130891819
+    }
+  ],
+  "shapiro": {
+    "W": 0.5092784127384389,
+    "p": 5.4068812024575484e-42
+  },
+  "bp": {
+    "LM": 4.501940404853703,
+    "p": 0.03385641416760611
+  },
+  "reset": {
+    "F": 23.068942167967897,
+    "p": 1.8725134833010317e-06
+  },
+  "dw": 1.9180026915254855,
+  "cook_threshold": 0.005082592121982211,
+  "cook_flagged": 25,
+  "max_cook": {
+    "name": "Xiaomi Redmi K20 Pro Signature Edition",
+    "csv_row": 496,
+    "x": 2.8,
+    "y": 5760.0,
+    "D": 0.32533834121283345
+  },
+  "sensitivity": [
+    {
+      "escenario": "Historica",
+      "n": 787,
+      "intercepto": -780.9141071697542,
+      "pendiente": 442.6850892729704,
+      "r2": 0.35229444652264086
+    },
+    {
+      "escenario": "Sin duplicado exacto",
+      "n": 786,
+      "intercepto": -780.5459072727659,
+      "pendiente": 442.59928427208615,
+      "r2": 0.35224141710004686
+    },
+    {
+      "escenario": "Sin mayor Cook",
+      "n": 786,
+      "intercepto": -764.8807291900583,
+      "pendiente": 433.639379329129,
+      "r2": 0.49734709533531474
+    },
+    {
+      "escenario": "Sin Cook mayor que 4/n",
+      "n": 762,
+      "intercepto": -525.0072849033369,
+      "pendiente": 328.3804983257451,
+      "r2": 0.5744108660642246
+    }
+  ],
+  "descriptive": {
+    "x": {
+      "count": 787.0,
+      "mean": 2.5184752223634055,
+      "std": 0.45856531755761093,
+      "min": 1.6,
+      "25%": 2.2,
+      "50%": 2.4,
+      "75%": 2.9050000000000002,
+      "max": 3.78
+    },
+    "y": {
+      "count": 787.0,
+      "mean": 333.9773214739517,
+      "std": 342.013461794315,
+      "min": 41.988,
+      "25%": 155.988,
+      "50%": 239.988,
+      "75%": 391.08,
+      "max": 5760.0
+    }
+  },
+  "hashes": {
+    "mobiles.csv": "b1d32ba02bc0109b6b7f0b4f7a10f315589da034454ab4b881a4ac34d07a19f3",
+    "telefono_Act.csv": "fe27b429e28c9b8f784e0c19bf660ba935f3c13e18611fb958d2d4007016068e",
+    "app.ipynb": "e9c7910b3b405e48d66c22899be0d44cade1d65fbf0abb00b611a142b38e7590"
+  },
+  "ghz_rebuilt_matches": 865,
+  "python_version": "3.14.6",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0"
+  },
+  "comprobaciones": {
+    "seleccion_historica": true,
+    "precios_y_frecuencias_reconstruidos": true,
+    "covarianza_numpy": true,
+    "regresion_scipy": true,
+    "identidades_cov_r_pendiente_R2_ANOVA": true,
+    "intervalos_formula_independiente": true
+  }
+}

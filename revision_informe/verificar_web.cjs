@@ -1,0 +1,48 @@
+const { chromium } = require('C:/Users/Yoyobastidas/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('node:fs');
+const path=require('node:path');
+const assert=require('node:assert/strict');
+(async()=>{
+ const base=process.argv[2]||'http://localhost:8000/';
+ const dir=path.resolve(__dirname,'../tmp/web-review');fs.mkdirSync(dir,{recursive:true});
+ const browser=await chromium.launch({channel:'msedge',headless:true});
+ try {
+ const page=await browser.newPage({viewport:{width:1440,height:1050}});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(base,{waitUntil:'networkidle'});
+ if(base.startsWith('https'))assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),base);
+ await page.waitForFunction(()=>document.getElementById('scatter').data?.length===2);
+ assert.equal(await page.locator('#count').innerText(),'865');
+ const metrics=await page.locator('#regressionStats').innerText();
+ assert.match(metrics,/n = 787/);assert.match(metrics,/93,089/);assert.match(metrics,/35,2/);
+ assert.equal(await page.locator('#scatter').evaluate(e=>e.data[0].x.length),787);
+ const nulls=await page.evaluate(()=>window.PHONES.filter(p=>p.ghz===null).length);assert.equal(nulls,78);
+ await page.screenshot({path:path.join(dir,'desktop.png'),fullPage:true});
+ await page.locator('#priceFilter').fill('500');
+ const filtered=await page.evaluate(()=>window.PHONES.filter(p=>p.price<=500&&p.rating>=3.4).length);
+ assert.equal(Number(await page.locator('#count').innerText()),filtered);
+ const downloadEvent=page.waitForEvent('download');await page.locator('#download').click();
+ const download=await downloadEvent;const file=path.join(dir,'filtered.csv');await download.saveAs(file);
+ const csv=fs.readFileSync(file,'utf8');assert(!csv.includes('NaN'));assert.equal(csv.trim().split(/\r?\n/).length,filtered+1);
+ await page.locator('#ratingFilter').fill('4.8');assert.equal(await page.locator('#count').innerText(),'0');
+ assert.match(await page.locator('#phones').innerText(),/No hay modelos/);
+ await page.locator('#resetFilters').click();assert.equal(await page.locator('#count').innerText(),'865');
+ await page.locator('#language').click();assert.equal(await page.locator('html').getAttribute('lang'),'en');
+ assert.match(await page.locator('#regressionStats').innerText(),/93.089/);
+ await page.locator('#language').click();
+ await page.setViewportSize({width:390,height:844});
+ await page.waitForFunction(()=>document.getElementById('scatter')._fullLayout.width<=document.getElementById('scatter').clientWidth+1);
+ await page.screenshot({path:path.join(dir,'mobile.png'),fullPage:true});
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'Mobile horizontal overflow');
+ await page.reload({waitUntil:'networkidle'});
+ await page.waitForFunction(()=>document.getElementById('scatter').data?.length===2);
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'Mobile initial load overflow');
+ const pdf=await page.request.get(new URL('downloads/informe-mobile-statics.pdf',base).href);
+ assert.equal(pdf.status(),200);assert.equal((await pdf.body()).subarray(0,4).toString(),'%PDF');
+ const png=await page.request.get(new URL('social-preview.png',base).href);assert.equal(png.status(),200);
+ assert.equal(errors.length,0,errors.join('\n'));
+ const result={url:base,records:865,completePairs:787,filteredCSVRows:filtered,pdfStatus:pdf.status(),socialImageStatus:png.status(),errors,mobileOverflow:false};
+ fs.writeFileSync(path.join(dir,base.startsWith('https')?'public-verification.json':'local-verification.json'),JSON.stringify(result,null,2));
+ console.log(JSON.stringify(result));
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1)});
