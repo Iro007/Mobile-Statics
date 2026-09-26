@@ -8,7 +8,7 @@ Abre `index.html` en un navegador moderno. La tabla de datos está en `data.js`.
 
 ## Publicación gratuita
 
-Enlace público: https://byirosaleshd.github.io/Mobile-Statics/
+Enlace público: https://iro007.github.io/Mobile-Statics/
 
 GitHub Pages publica la raíz de la rama `gh-pages`. Los archivos de esta carpeta se copian a esa rama mediante `revision_informe/desplegar_web.ps1`. La rama `main` conserva el proyecto histórico. No necesita servidor de pago ni base de datos remota.
 
